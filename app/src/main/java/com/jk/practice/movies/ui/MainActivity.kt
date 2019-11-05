@@ -1,7 +1,8 @@
-package com.jk.practice.movies
+package com.jk.practice.movies.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.jk.practice.movies.R
 
 class MainActivity : AppCompatActivity() {
 
