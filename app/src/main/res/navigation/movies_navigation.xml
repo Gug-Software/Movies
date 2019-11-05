@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/movies_navigation">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/movies_navigation"
+    app:startDestination="@id/movies">
+
+    <fragment
+        android:id="@+id/movies"
+        android:name="com.jk.practice.movies.ui.movies.MoviesFragment"
+        android:label="MoviesFragment">
+        <action
+            android:id="@+id/action_movies_to_movieDetail"
+            app:destination="@id/movieDetail" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/movieDetail"
+        android:name="com.jk.practice.movies.ui.moviedetail.MovieDetailFragment"
+        android:label="MovieDetailFragment">
+        <argument
+            android:name="movieId"
+            app:argType="integer" />
+    </fragment>
 
 </navigation>
