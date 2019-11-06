@@ -10,7 +10,11 @@
         android:label="MoviesFragment">
         <action
             android:id="@+id/action_movies_to_movieDetail"
-            app:destination="@id/movieDetail" />
+            app:destination="@id/movieDetail"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
     </fragment>
 
     <fragment
