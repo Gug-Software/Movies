@@ -37,6 +37,15 @@ android {
     dataBinding {
         enabled = true
     }
+
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
 }
 
 dependencies {
@@ -51,13 +60,12 @@ dependencies {
     // Constraint Layout
     implementation "androidx.constraintlayout:constraintlayout:$version_constraint_layout"
     // Navigation
-    implementation "android.arch.navigation:navigation-fragment-ktx:$version_navigation"
-    implementation "android.arch.navigation:navigation-ui-ktx:$version_navigation"
+    implementation "androidx.navigation:navigation-fragment-ktx:$version_navigation"
+    implementation "androidx.navigation:navigation-ui-ktx:$version_navigation"
     // Core with Ktx
     implementation "androidx.core:core-ktx:$version_core"
     // Glide
     implementation "com.github.bumptech.glide:glide:$version_glide"
-
     // RecyclerView
     implementation "androidx.recyclerview:recyclerview:$version_recyclerview"
 
@@ -76,6 +84,5 @@ dependencies {
 
     androidTestImplementation "androidx.test.ext:junit:$test_x_junit"
     androidTestImplementation "androidx.test.espresso:espresso-core:$test_espresso_core"
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.1.0'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.1.0'
+
 }

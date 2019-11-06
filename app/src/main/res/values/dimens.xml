@@ -1,2 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+
+    <dimen name="elevation_S">4dp</dimen>
+    <dimen name="elevation_M">8dp</dimen>
+
+</resources>
