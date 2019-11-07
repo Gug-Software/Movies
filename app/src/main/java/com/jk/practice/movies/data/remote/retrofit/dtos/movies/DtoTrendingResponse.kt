@@ -19,7 +19,7 @@ data class DtoTrendingResponse(
         @Json(name = "backdrop_path")
         val backdropPath: String, // /3uG3aOhEzFCjcQulsJQiAzLSrw8.jpg
         @Json(name = "first_air_date")
-        val firstAirDate: String, // 2010-10-31
+        val firstAirDate: String?, // 2010-10-31
         @Json(name = "genre_ids")
         val genreIds: List<Int>,
         @Json(name = "id")
@@ -27,13 +27,13 @@ data class DtoTrendingResponse(
         @Json(name = "media_type")
         val mediaType: String, // movie
         @Json(name = "name")
-        val name: String, // The Walking Dead
+        val name: String?, // The Walking Dead
         @Json(name = "origin_country")
-        val originCountry: List<String>,
+        val originCountry: List<String>?,
         @Json(name = "original_language")
         val originalLanguage: String, // en
         @Json(name = "original_name")
-        val originalName: String, // The Walking Dead
+        val originalName: String?, // The Walking Dead
         @Json(name = "original_title")
         val originalTitle: String, // 47 Meters Down: Uncaged
         @Json(name = "overview")

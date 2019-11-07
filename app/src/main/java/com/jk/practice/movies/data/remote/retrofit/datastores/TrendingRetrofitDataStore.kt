@@ -20,9 +20,9 @@ class TrendingRetrofitDataStore(
         return withContext(ioDispatcher) {
             try {
                 moviesAPI.getTrendingMovies(
-                    API_KEY,
                     MEDIA_TYPE_MOVIES,
-                    TIME_WINDOW_DAY
+                    TIME_WINDOW_DAY,
+                    API_KEY
                 ).await()
             } catch (e: Exception) {
                 throw Exception("Illegal state")

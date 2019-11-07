@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <dimen name="radius_S">4dp</dimen>
+    <dimen name="radius_M">8dp</dimen>
+
+    <dimen name="padding_S">8dp</dimen>
+    <dimen name="padding_M">16dp</dimen>
+
+    <dimen name="margin_XS">4dp</dimen>
+    <dimen name="margin_S">8dp</dimen>
+    <dimen name="margin_M">16dp</dimen>
+
     <dimen name="elevation_S">4dp</dimen>
     <dimen name="elevation_M">8dp</dimen>
+
+    <dimen name="movie_item_height">180dp</dimen>
 
 </resources>

@@ -89,6 +89,16 @@ dependencies {
     implementation "com.squareup.moshi:moshi:$version_moshi"
     implementation "com.squareup.moshi:moshi-kotlin:$version_moshi"
 
+    // KOIN
+    // Koin for Android
+    implementation "org.koin:koin-android:$version_koin"
+    // Koin Android Scope features
+    implementation "org.koin:koin-android-scope:$version_koin"
+    // Koin Android ViewModel features
+    implementation "org.koin:koin-android-viewmodel:$version_koin"
+    // Koin Android Experimental features
+    implementation "org.koin:koin-android-ext:$version_koin"
+
     testImplementation "junit:junit:$test_junit"
 
     androidTestImplementation "androidx.test.ext:junit:$test_x_junit"

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="movie"
+            type="com.jk.practice.movies.data.remote.retrofit.dtos.movies.DtoTrendingResponse.DtoMovie" />
+
+        <variable
+            name="listener"
+            type="com.jk.practice.movies.ui.movies.adapter.MovieItemListener">
+
+        </variable>
+
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/movie_constraintPpal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_S">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/movie_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/radius_M"
+            app:cardElevation="@dimen/elevation_S"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintDimensionRatio="H, 4:3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/movie_constraintCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/movie_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/movie_item_height"
+                    android:scaleType="fitXY"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+                <TextView
+                    android:id="@+id/movie_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_S"
+                    android:layout_marginBottom="@dimen/margin_S"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    android:textColor="@color/primaryTextColor"
+                    app:layout_constraintBottom_toBottomOf="@id/movie_image"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:text="Nombre de la pelicula" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/margin_S"
+            android:drawableLeft="@drawable/ic_date_range_black_24dp"
+            android:drawablePadding="@dimen/padding_S"
+            android:drawableTint="@color/primaryColor"
+            android:gravity="center"
+            android:text="12 de Febrero de 2019"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+            android:textColor="@color/secondaryTextColor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/movie_card" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
