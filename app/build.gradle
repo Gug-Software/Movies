@@ -80,6 +80,15 @@ dependencies {
     implementation "androidx.legacy:legacy-support-v4:$version_legacy"
     implementation "androidx.appcompat:appcompat:$version_appcompat"
 
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$version_retrofit"
+    implementation "com.squareup.retrofit2:converter-moshi:$version_retrofit"
+    // Retrofit Coroutines Support
+    implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:$version_retrofit_coroutines_adapter"
+    // Moshi
+    implementation "com.squareup.moshi:moshi:$version_moshi"
+    implementation "com.squareup.moshi:moshi-kotlin:$version_moshi"
+
     testImplementation "junit:junit:$test_junit"
 
     androidTestImplementation "androidx.test.ext:junit:$test_x_junit"
