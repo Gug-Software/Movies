@@ -7,12 +7,11 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.jk.practice.movies.data.remote.retrofit.dtos.movies.DtoTrendingResponse
 import com.jk.practice.movies.databinding.RecyclerItemMovieBinding
+import com.jk.practice.movies.domain.movies.Movie
 
 class MoviesAdapter(
     val clickListener: MovieItemListener
-) :
-
-    ListAdapter<DtoTrendingResponse.DtoMovie, MoviesAdapter.PostViewHolder>(MovieDiffCallback()) {
+) : ListAdapter<Movie, MoviesAdapter.PostViewHolder>(MovieDiffCallback()) {
 
     override fun onBindViewHolder(holder: PostViewHolder, position: Int) {
         val item = getItem(position)
@@ -31,7 +30,7 @@ class MoviesAdapter(
 
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(clickListener: MovieItemListener, item: DtoTrendingResponse.DtoMovie) {
+        fun bind(clickListener: MovieItemListener, item: Movie) {
             binding.movie = item
             binding.listener = clickListener
             binding.executePendingBindings()
@@ -55,17 +54,17 @@ class MoviesAdapter(
  * Used by ListAdapter to calculate the minumum number of changes between and old list and a new
  * list that's been passed to `submitList`.
  */
-class MovieDiffCallback : DiffUtil.ItemCallback<DtoTrendingResponse.DtoMovie>() {
+class MovieDiffCallback : DiffUtil.ItemCallback<Movie>() {
     override fun areItemsTheSame(
-        oldItem: DtoTrendingResponse.DtoMovie,
-        newItem: DtoTrendingResponse.DtoMovie
+        oldItem: Movie,
+        newItem: Movie
     ): Boolean {
         return oldItem.id == newItem.id
     }
 
     override fun areContentsTheSame(
-        oldItem: DtoTrendingResponse.DtoMovie,
-        newItem: DtoTrendingResponse.DtoMovie
+        oldItem: Movie,
+        newItem: Movie
     ): Boolean {
         return oldItem == newItem
     }

@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
-import androidx.navigation.fragment.findNavController
 
 import com.jk.practice.movies.R
 import com.jk.practice.movies.databinding.FragmentMoviesBinding
@@ -17,7 +16,6 @@ import com.jk.practice.movies.domain.contracts.movies.IContractMovies
 import com.jk.practice.movies.ui.movies.adapter.MovieItemListener
 import com.jk.practice.movies.ui.movies.adapter.MoviesAdapter
 import com.jk.practice.movies.viewmodels.movies.MoviesViewModel
-import kotlinx.android.synthetic.main.fragment_movies.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
 /**

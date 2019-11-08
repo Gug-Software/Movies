@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.jk.practice.movies.data.remote.retrofit.dtos.movies.DtoTrendingResponse
 import com.jk.practice.movies.domain.contracts.movies.IContractMovies
+import com.jk.practice.movies.domain.movies.Movie
 import com.jk.practice.movies.repository.movies.MoviesRepository
 import com.jk.practice.movies.utils.Result
 import com.jk.practice.movies.utils.WorkStatus
@@ -16,8 +17,8 @@ class MoviesViewModel(
 ) : BaseViewModelCoroutine(), IContractMovies.ViewModel {
 
     private val _movies =
-        MutableLiveData<List<DtoTrendingResponse.DtoMovie>>().apply { value = emptyList() }
-    val movies: LiveData<List<DtoTrendingResponse.DtoMovie>> = _movies
+        MutableLiveData<List<Movie>>().apply { value = emptyList() }
+    val movies: LiveData<List<Movie>> = _movies
 
     private val _status = MutableLiveData<WorkStatus>()
     val status: LiveData<WorkStatus> = _status

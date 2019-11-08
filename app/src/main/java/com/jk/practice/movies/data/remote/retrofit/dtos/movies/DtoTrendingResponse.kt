@@ -17,7 +17,7 @@ data class DtoTrendingResponse(
         @Json(name = "adult")
         val adult: Boolean, // false
         @Json(name = "backdrop_path")
-        val backdropPath: String, // /3uG3aOhEzFCjcQulsJQiAzLSrw8.jpg
+        val backdropPath: String?, // /3uG3aOhEzFCjcQulsJQiAzLSrw8.jpg
         @Json(name = "first_air_date")
         val firstAirDate: String?, // 2010-10-31
         @Json(name = "genre_ids")
@@ -41,7 +41,7 @@ data class DtoTrendingResponse(
         @Json(name = "popularity")
         val popularity: Double, // 97.537
         @Json(name = "poster_path")
-        val posterPath: String, // /g4z7mDmJmx23vsVg6XNWcnXb6gc.jpg
+        val posterPath: String?, // /g4z7mDmJmx23vsVg6XNWcnXb6gc.jpg
         @Json(name = "release_date")
         val releaseDate: String, // 2019-08-15
         @Json(name = "title")

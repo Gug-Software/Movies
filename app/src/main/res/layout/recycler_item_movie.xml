@@ -7,7 +7,7 @@
 
         <variable
             name="movie"
-            type="com.jk.practice.movies.data.remote.retrofit.dtos.movies.DtoTrendingResponse.DtoMovie" />
+            type="com.jk.practice.movies.domain.movies.Movie" />
 
         <variable
             name="listener"
@@ -42,6 +42,7 @@
 
                 <ImageView
                     android:id="@+id/movie_image"
+                    imageUrl="@{movie.definitiveBackdropPath}"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/movie_item_height"
                     android:scaleType="fitXY"
@@ -56,6 +57,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/margin_S"
                     android:layout_marginBottom="@dimen/margin_S"
+                    android:text="@{movie.originalTitle}"
                     android:textAppearance="@style/TextAppearance.AppCompat.Title"
                     android:textColor="@color/primaryTextColor"
                     app:layout_constraintBottom_toBottomOf="@id/movie_image"
@@ -74,12 +76,13 @@
             android:drawablePadding="@dimen/padding_S"
             android:drawableTint="@color/primaryColor"
             android:gravity="center"
-            android:text="12 de Febrero de 2019"
+            android:text="@{movie.releaseDate}"
             android:textAppearance="@style/TextAppearance.AppCompat.Caption"
             android:textColor="@color/secondaryTextColor"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/movie_card" />
+            app:layout_constraintTop_toBottomOf="@id/movie_card"
+            tools:text="12 de Febrero 2019" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
