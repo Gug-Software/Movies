@@ -23,7 +23,7 @@ interface MoviesAPI {
      * @param mediaType define a mediatype
      * @param timeWindow define a timeWindow
      */
-    @GET("trendin/{media_type}/{time_window}")
+    @GET("trending/{media_type}/{time_window}")
     fun getTrendingMovies(
         @Path("media_type") mediaType: String,
         @Path("time_window") timeWindow: String,

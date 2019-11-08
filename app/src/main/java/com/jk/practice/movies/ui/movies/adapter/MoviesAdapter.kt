@@ -10,7 +10,7 @@ import com.jk.practice.movies.databinding.RecyclerItemMovieBinding
 import com.jk.practice.movies.domain.movies.Movie
 
 class MoviesAdapter(
-    val clickListener: MovieItemListener
+    private val clickListener: MovieItemListener
 ) : ListAdapter<Movie, MoviesAdapter.PostViewHolder>(MovieDiffCallback()) {
 
     override fun onBindViewHolder(holder: PostViewHolder, position: Int) {

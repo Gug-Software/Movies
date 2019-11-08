@@ -1,9 +1,9 @@
 package com.jk.practice.movies.ui.movies.adapter
 
-import com.jk.practice.movies.data.remote.retrofit.dtos.movies.DtoTrendingResponse
+import com.jk.practice.movies.domain.movies.Movie
 
 class MovieItemListener(
-    val clickListener: (movie: DtoTrendingResponse.DtoMovie) -> Unit
+    val clickListener: (movie: Movie) -> Unit
 ) {
-    fun onClick(movie: DtoTrendingResponse.DtoMovie) = clickListener(movie)
+    fun onClick(movie: Movie) = clickListener(movie)
 }
