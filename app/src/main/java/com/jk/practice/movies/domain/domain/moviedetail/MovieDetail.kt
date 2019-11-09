@@ -1,6 +1,7 @@
 package com.jk.practice.movies.domain.domain.moviedetail
 
 import com.jk.practice.movies.data.remote.retrofit.MoviesAPIConstants.Companion.IMAGE_PATH
+import com.jk.practice.movies.utils.CurrencyUtils
 import gug.co.com.moviemarket.domain.details.Genre
 
 data class MovieDetail(
@@ -21,8 +22,10 @@ data class MovieDetail(
 
 ) {
 
+    val budgetString = CurrencyUtils.formatCurrency(budget)
     val definitiveBackdropPath: String = getDefinitivePosterPath(backdropPath)
     val average = voteAverage.toString()
+    val voteCountString = voteCount.toString()
 
     private fun getDefinitivePosterPath(posterPath: String?): String {
         if (posterPath != null) {

@@ -4,13 +4,16 @@
     <dimen name="radius_S">4dp</dimen>
     <dimen name="radius_M">8dp</dimen>
 
+    <dimen name="padding_XS">4dp</dimen>
     <dimen name="padding_S">8dp</dimen>
     <dimen name="padding_M">16dp</dimen>
+    <dimen name="padding_L">32dp</dimen>
 
     <dimen name="margin_XS">4dp</dimen>
     <dimen name="margin_S">8dp</dimen>
     <dimen name="margin_M">16dp</dimen>
 
+    <dimen name="elevation_XS">2dp</dimen>
     <dimen name="elevation_S">4dp</dimen>
     <dimen name="elevation_M">8dp</dimen>
 

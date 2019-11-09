@@ -3,5 +3,19 @@
     <string name="app_name">Movies</string>
     <string name="menu_bottom_movies">Movies</string>
 
+    <string name="movieDetail_description">Descripción</string>
+    <string name="movieDetail_genres">Generos</string>
+    <string name="movieDetail_language">Idioma</string>
+    <string name="movieDetail_productionCompanies">Compañias productoras</string>
+    <string name="movieDetail_budget">Presupuesto</string>
+    <string name="movieDetail_qualify">Calificación</string>
+    <string name="movieDetail_voteCount">No. votos</string>
+
+    <string name="lorem_words_50">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean congue nisl ante, vel
+        facilisis ex mattis at. Nullam luctus egestas odio eget interdum. In congue, velit sit amet ullamcorper dictum,
+        dolor lectus pulvinar massa, non sodales arcu orci a mauris. Etiam posuere vulputate magna at iaculis. Curabitur
+        gravida leo tortor.
+    </string>
+
 
 </resources>

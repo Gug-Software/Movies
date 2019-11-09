@@ -12,6 +12,7 @@ buildscript {
         version_constraint_layout = "2.0.0-beta3"
         version_glide = "4.9.0"
         version_recyclerview = "1.1.0-rc01"
+        version_design = "24.2.1"
         version_material = "1.2.0-alpha01"
         version_room = "2.2.1"
         version_appcompat = "1.1.0"

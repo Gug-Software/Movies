@@ -49,15 +49,20 @@ class MovieDetailRepository(
         return withContext(ioDispatcher) {
 
             try {
-                val movieRemote = remoteDataStore.getMovieDetail(movieId)
-                movieRemote?.let { movieDetail ->
-                    localDataStore.updateMovie(movieDetailDbMapper.mapFromTo(movieDetail))
-                    saveGenres(movieDetail, movieId)
-                    saveProductionCompanies(movieDetail, movieId)
-                    saveSpokenLanguages(movieDetail, movieId)
-                    val movie = getDomainMovieFromRemote(movieDetail)
-                    return@withContext Result.Success(movie)
-                }
+                var movie =
+                    getDomainMovieFromLocal(movieId)
+
+                return@withContext Result.Success(movie)
+
+//                val movieRemote = remoteDataStore.getMovieDetail(movieId)
+//                movieRemote?.let { movieDetail ->
+//                    localDataStore.updateMovie(movieDetailDbMapper.mapFromTo(movieDetail))
+//                    saveGenres(movieDetail, movieId)
+//                    saveProductionCompanies(movieDetail, movieId)
+//                    saveSpokenLanguages(movieDetail, movieId)
+//                    val movie = getDomainMovieFromRemote(movieDetail)
+//                    return@withContext Result.Success(movie)
+//                }
             } catch (exc: Exception) {
                 // if the remote data fails, we try get the info from local
                 var movie =
