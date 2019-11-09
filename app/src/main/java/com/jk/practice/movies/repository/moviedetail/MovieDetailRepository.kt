@@ -14,6 +14,7 @@ import com.jk.practice.movies.domain.contracts.moviedetail.IContractMovieDetail
 import com.jk.practice.movies.domain.domain.moviedetail.MovieDetail
 import com.jk.practice.movies.domain.domain.moviedetail.ProductionCompany
 import com.jk.practice.movies.domain.domain.moviedetail.SpokenLanguage
+import com.jk.practice.movies.domain.domain.movies.Movie
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -32,6 +33,10 @@ class MovieDetailRepository(
     private val genreMapperFromRemote: Mapper<DtoGenre, Genre>,
     private val companyMapperFromRemote: Mapper<DtoProductionCompany, ProductionCompany>,
     private val languageMapperFromRemote: Mapper<DtoSpokenLanguage, SpokenLanguage>,
+    private val movieDetailMapperFromLocal: Mapper<DbMovie, MovieDetail>,
+    private val genreMapperFromLocal: Mapper<DbGenre, Genre>,
+    private val companyMapperFromLocal: Mapper<DbProductionCompany, ProductionCompany>,
+    private val languageMapperFromLocal: Mapper<DbSpokenLanguage, SpokenLanguage>,
     private val ioDispatcher: CoroutineDispatcher = Dispatchers.IO
 ) : IContractMovieDetail.Model {
 
@@ -54,9 +59,36 @@ class MovieDetailRepository(
                     return@withContext Result.Success(movie)
                 }
             } catch (exc: Exception) {
-                return@withContext Result.Error(Exception("Illegal state"))
+                // if the remote data fails, we try get the info from local
+                var movie =
+                    getDomainMovieFromLocal(movieId)
+
+                return@withContext Result.Success(movie)
             }
         }
+    }
+
+    private suspend fun getDomainMovieFromLocal(movieId: Int): MovieDetail {
+
+        val movieLocal = localDataStore.getMovieById(movieId = movieId)
+        val genresLocal = localDataStore.getGenresByMovieId(movieId = movieId)
+        val companiesLocal =
+            localDataStore.getProductionCompaniesByMovieId(movieId = movieId)
+        val languagesLocal = localDataStore.getSpokenLaguageByMovieId(movieId = movieId)
+
+        var movie = movieDetailMapperFromLocal.mapFromTo((movieLocal as Result.Success).data)
+        movie.apply {
+            this.genres = (genresLocal as Result.Success).data.map {
+                genreMapperFromLocal.mapFromTo(it)
+            }
+            this.companies = (companiesLocal as Result.Success).data.map {
+                companyMapperFromLocal.mapFromTo(it)
+            }
+            this.languages = (languagesLocal as Result.Success).data.map {
+                languageMapperFromLocal.mapFromTo(it)
+            }
+        }
+        return movie
     }
 
     private fun getDomainMovieFromRemote(

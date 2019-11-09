@@ -1,6 +1,5 @@
 package com.jk.practice.movies.ui.moviedetail
 
-
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -13,9 +12,6 @@ import com.jk.practice.movies.databinding.FragmentMovieDetailBinding
 import com.jk.practice.movies.viewmodels.moviedetail.MovieDetailViewModel
 import org.koin.android.viewmodel.ext.android.viewModel
 
-/**
- * A simple [Fragment] subclass.
- */
 class MovieDetailFragment : Fragment() {
 
     lateinit var binding: FragmentMovieDetailBinding

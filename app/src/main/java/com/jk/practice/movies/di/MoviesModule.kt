@@ -93,6 +93,10 @@ class MoviesModule {
                     get(named("GenreFromRemote")),
                     get(named("CompanyFromRemote")),
                     get(named("LanguageFromRemote")),
+                    get(named("MovieDetailFromLocal")),
+                    get(named("GenreFromLocal")),
+                    get(named("CompanyFromLocal")),
+                    get(named("LanguageFromLocal")),
                     Dispatchers.IO
                 )
             }
