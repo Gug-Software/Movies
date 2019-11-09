@@ -23,10 +23,10 @@ interface MoviesAPI {
      * @param mediaType define a mediatype
      * @param timeWindow define a timeWindow
      */
-    @GET("trending/{media_type}/{time_window}")
+    @GET("trending/{$MEDIA_TYPE}/{$TIME_WINDOW}")
     fun getTrendingMovies(
-        @Path("media_type") mediaType: String,
-        @Path("time_window") timeWindow: String,
+        @Path("$MEDIA_TYPE") mediaType: String,
+        @Path("$TIME_WINDOW") timeWindow: String,
         @Query("api_key") apiKey: String
     ): Deferred<DtoTrendingResponse>
 

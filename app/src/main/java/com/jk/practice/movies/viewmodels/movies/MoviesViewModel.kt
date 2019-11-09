@@ -2,15 +2,12 @@ package com.jk.practice.movies.viewmodels.movies
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.jk.practice.movies.data.remote.retrofit.dtos.movies.DtoTrendingResponse
 import com.jk.practice.movies.domain.contracts.movies.IContractMovies
-import com.jk.practice.movies.domain.movies.Movie
-import com.jk.practice.movies.repository.movies.MoviesRepository
+import com.jk.practice.movies.domain.domain.movies.Movie
 import com.jk.practice.movies.utils.Result
 import com.jk.practice.movies.utils.WorkStatus
 import com.jk.practice.movies.viewmodels.BaseViewModelCoroutine
 import kotlinx.coroutines.launch
-import java.util.ArrayList
 
 class MoviesViewModel(
     private val repository: IContractMovies.Model
@@ -25,6 +22,9 @@ class MoviesViewModel(
 
     private val _snackbarText = MutableLiveData<Int>()
     val snackbarMessage: LiveData<Int> = _snackbarText
+
+    private val _navToDetailMovie = MutableLiveData<Movie>()
+    val navToDetailMovie: LiveData<Movie> = _navToDetailMovie
 
     override fun loadMovies() {
 
@@ -46,6 +46,13 @@ class MoviesViewModel(
             }
         }
 
+    }
 
+    override fun showMovieDetail(movie: Movie) {
+        _navToDetailMovie.value = movie
+    }
+
+    fun onNavigateMovieDetailDone() {
+        _navToDetailMovie.value = null
     }
 }

@@ -7,7 +7,7 @@
 
         <variable
             name="movie"
-            type="com.jk.practice.movies.domain.movies.Movie" />
+            type="com.jk.practice.movies.domain.domain.movies.Movie" />
 
         <variable
             name="listener"

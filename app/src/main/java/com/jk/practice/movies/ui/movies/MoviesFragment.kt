@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 
 import com.jk.practice.movies.R
 import com.jk.practice.movies.databinding.FragmentMoviesBinding
@@ -31,7 +32,6 @@ class MoviesFragment
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         binding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_movies, container, false
         )
@@ -43,7 +43,6 @@ class MoviesFragment
         defineObservers()
 
         return binding.root
-
     }
 
     override fun onStart() {
@@ -55,9 +54,8 @@ class MoviesFragment
 
         val adapter = MoviesAdapter(
             MovieItemListener(
-                clickListener = {
-                    //viewModel.showMovieDetail(it)
-                    Toast.makeText(context, "click movie", Toast.LENGTH_SHORT).show()
+                clickListener = { movie ->
+                    viewModel.showMovieDetail(movie)
                 }
             )
         )
@@ -71,6 +69,21 @@ class MoviesFragment
     }
 
     private fun defineObservers() {
+
+        viewModel.navToDetailMovie.observe(this, Observer { movie ->
+            movie?.let {
+                navigateToMovieDetail(movie.id)
+                viewModel.onNavigateMovieDetailDone()
+            }
+        })
+
+    }
+
+    override fun navigateToMovieDetail(movieId: Int) {
+
+        this.findNavController().navigate(
+            MoviesFragmentDirections.actionMoviesToMovieDetail(movieId)
+        )
     }
 
 

@@ -1,8 +1,7 @@
-package com.jk.practice.movies.domain.mappers
+package com.jk.practice.movies.domain.mappers.movie
 
-import com.jk.practice.movies.data.local.room.entities.DbMovie
 import com.jk.practice.movies.data.remote.retrofit.dtos.movies.DtoTrendingResponse
-import com.jk.practice.movies.domain.movies.Movie
+import com.jk.practice.movies.domain.domain.movies.Movie
 import com.jk.practice.movies.utils.mapper.Mapper
 
 class MovieMapperFromRemote : Mapper<DtoTrendingResponse.DtoMovie, Movie>() {

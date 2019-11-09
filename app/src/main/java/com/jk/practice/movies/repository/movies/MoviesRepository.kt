@@ -5,7 +5,7 @@ import com.jk.practice.movies.data.local.room.entities.DbMovie
 import com.jk.practice.movies.data.remote.datastore.ITrendingRemoteDataStore
 import com.jk.practice.movies.data.remote.retrofit.dtos.movies.DtoTrendingResponse
 import com.jk.practice.movies.domain.contracts.movies.IContractMovies
-import com.jk.practice.movies.domain.movies.Movie
+import com.jk.practice.movies.domain.domain.movies.Movie
 import com.jk.practice.movies.utils.Result
 import com.jk.practice.movies.utils.mapper.Mapper
 import kotlinx.coroutines.CoroutineDispatcher

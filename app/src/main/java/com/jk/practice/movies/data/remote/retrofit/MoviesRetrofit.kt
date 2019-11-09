@@ -1,6 +1,7 @@
 package gug.co.com.networkmoviemarketlib.data.source.remote.retrofit
 
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
+import com.jk.practice.movies.data.remote.retrofit.MovieDetailAPI
 import com.jk.practice.movies.data.remote.retrofit.MoviesAPI
 import com.jk.practice.movies.data.remote.retrofit.MoviesAPIConstants.Companion.URL
 import com.squareup.moshi.Moshi
@@ -38,6 +39,6 @@ object MoviesRetrofit {
         .build()
 
     val moviesApi = retrofit.create(MoviesAPI::class.java)
-    //val movieDetailApi = retrofit.create(MovieDetailAPI::class.java)
+    val movieDetailApi = retrofit.create(MovieDetailAPI::class.java)
 
 }

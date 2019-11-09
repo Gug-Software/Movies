@@ -1,4 +1,4 @@
-package com.jk.practice.movies.domain.movies
+package com.jk.practice.movies.domain.domain.movies
 
 import com.jk.practice.movies.data.remote.retrofit.MoviesAPIConstants.Companion.IMAGE_PATH
 

@@ -5,9 +5,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.jk.practice.movies.data.remote.retrofit.dtos.movies.DtoTrendingResponse
 import com.jk.practice.movies.databinding.RecyclerItemMovieBinding
-import com.jk.practice.movies.domain.movies.Movie
+import com.jk.practice.movies.domain.domain.movies.Movie
 
 class MoviesAdapter(
     private val clickListener: MovieItemListener

@@ -7,8 +7,7 @@ class MoviesAPIConstants {
         val URL = "https://api.themoviedb.org/3/"
         val API_KEY = "f6f22d6270ecc338f31fb3771cc6b13e"
 
-        val LANGUAGE_ES = "ES"
-        val REGION_COLOMBIA = "CO"
+        val LANGUAGE_ES = "es-CO"
 
         val IMAGE_PATH = "https://image.tmdb.org/t/p/w500"
 
