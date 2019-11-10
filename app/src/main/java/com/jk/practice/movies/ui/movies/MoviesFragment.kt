@@ -47,8 +47,8 @@ class MoviesFragment
 
     override fun onStart() {
         super.onStart()
-        //viewModel.loadMovies()
-        navigateToMovieDetail(420818)
+        viewModel.loadMovies()
+        //navigateToMovieDetail(420818)
     }
 
     private fun configureRecyclerMovies() {

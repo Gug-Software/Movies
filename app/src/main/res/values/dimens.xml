@@ -17,6 +17,6 @@
     <dimen name="elevation_S">4dp</dimen>
     <dimen name="elevation_M">8dp</dimen>
 
-    <dimen name="movie_item_height">180dp</dimen>
+    <dimen name="movie_item_height">210dp</dimen>
 
 </resources>

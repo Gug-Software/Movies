@@ -40,6 +40,7 @@
                     android:layout_marginStart="@dimen/margin_M"
                     android:layout_marginTop="@dimen/margin_S"
                     android:layout_marginEnd="@dimen/margin_M"
+                    android:lineSpacingMultiplier="1.2"
                     android:text="@{viewModel.movie.overview}"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -48,6 +49,7 @@
                     tools:text="@string/lorem_words_50" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_marginTop="@dimen/margin_S"
                     android:id="@+id/movieDetail_constraintLanguageAndBudge"
                     style="@style/mw"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -81,6 +83,7 @@
                     <TextView
                         android:id="@+id/movieDetail_textViewAverageValue"
                         android:layout_width="wrap_content"
+                        android:layout_marginTop="@dimen/margin_S"
                         android:layout_height="wrap_content"
                         android:text="@{viewModel.movie.average}"
                         android:textAppearance="@style/TextAppearance.AppCompat.Title"
@@ -166,6 +169,7 @@
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/movieDetail_recyclerGenres"
                         style="@style/mw"
+                        android:layout_marginTop="@dimen/margin_XS"
                         android:layout_marginStart="@dimen/margin_M"
                         android:orientation="horizontal"
                         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
@@ -199,6 +203,7 @@
                         style="@style/mw"
                         android:layout_marginStart="@dimen/margin_M"
                         android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/margin_XS"
                         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -228,8 +233,8 @@
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/movieDetail_recyclerCompanies"
                         style="@style/mw"
-                        android:layout_marginTop="@dimen/margin_S"
                         android:layout_marginStart="@dimen/margin_M"
+                        android:layout_marginTop="@dimen/margin_M"
                         android:orientation="horizontal"
                         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                         app:layout_constraintEnd_toEndOf="parent"
