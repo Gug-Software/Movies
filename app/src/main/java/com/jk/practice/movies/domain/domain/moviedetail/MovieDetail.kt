@@ -15,7 +15,7 @@ data class MovieDetail(
     val budget: Int, // 356000000
     val originalLanguage: String, // en
     val popularity: Double, // 97.537
-    val voteCount: Int, // 164
+    val voteCount: Int = 0, // 164
     var genres: List<Genre>,
     var companies: List<ProductionCompany>,
     var languages: List<SpokenLanguage>

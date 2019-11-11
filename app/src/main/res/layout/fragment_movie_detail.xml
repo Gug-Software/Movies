@@ -164,8 +164,7 @@
                         android:id="@+id/movieDetail_textViewVotes"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text=", 4569 votos"
-
+                        android:text="@{@string/movieDetail_voteCount(viewModel.movie.voteCountString)}"
                         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                         app:layout_constraintBaseline_toBaselineOf="@+id/movieDetail_textViewAverageValue2"
                         app:layout_constraintEnd_toEndOf="parent"

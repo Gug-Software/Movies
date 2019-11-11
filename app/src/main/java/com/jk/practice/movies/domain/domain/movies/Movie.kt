@@ -1,6 +1,7 @@
 package com.jk.practice.movies.domain.domain.movies
 
 import com.jk.practice.movies.data.remote.retrofit.MoviesAPIConstants.Companion.IMAGE_PATH
+import com.jk.practice.movies.utils.DateUtils
 
 data class Movie(
 
@@ -12,6 +13,7 @@ data class Movie(
 ) {
 
     val definitiveBackdropPath: String = getDefinitiveBackdropPath(backdropPath)
+    val releaseForHuman = DateUtils.convertDateForHuman(releaseDate)
 
     private fun getDefinitiveBackdropPath(posterPath: String?): String {
         if (posterPath != null) {

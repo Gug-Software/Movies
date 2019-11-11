@@ -9,7 +9,7 @@
     <string name="movieDetail_productionCompanies">Compañias productoras</string>
     <string name="movieDetail_budget">Presupuesto</string>
     <string name="movieDetail_qualify">Calificación</string>
-    <string name="movieDetail_voteCount">No. votos</string>
+    <string name="movieDetail_voteCount">, %1$s votos</string>
 
     <string name="msg_empty">No hay movies por mostrar</string>
     <string name="msg_error">Ha ocurrido un error inesperado</string>

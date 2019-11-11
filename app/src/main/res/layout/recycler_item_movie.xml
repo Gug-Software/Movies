@@ -67,7 +67,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/margin_M"
                     android:gravity="center"
-                    android:text="@{movie.releaseDate}"
+                    android:text="@{movie.releaseForHuman}"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     android:textColor="@color/primaryTextColor"
                     app:layout_constraintBottom_toTopOf="@id/movie_name"
