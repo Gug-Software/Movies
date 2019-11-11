@@ -34,17 +34,17 @@
             android:background="@drawable/shape_circle_image48dp"
             android:elevation="@dimen/elevation_S"
             android:padding="@dimen/padding_XS"
-            android:src="@drawable/ic_people_black_18dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/guidelineCenter"
             app:layout_constraintStart_toStartOf="@id/guidelineCenter"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/avatars" />
 
         <com.google.android.material.chip.Chip
             android:layout_width="wrap_content"
-            android:clickable="false"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/margin_S"
+            android:clickable="false"
             android:elevation="@dimen/elevation_XS"
             android:text="@{company.name}"
             app:chipBackgroundColor="@color/primaryTextColor"

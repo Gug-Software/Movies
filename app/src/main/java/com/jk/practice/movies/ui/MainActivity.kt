@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
             when (destination.id) {
                 R.id.movieDetail -> {
                     binding.bottomNavView.visibility = View.GONE
-                    binding.toolbar.visibility = View.VISIBLE
+                    binding.toolbar.visibility = View.GONE
                 }
                 else -> {
                     binding.bottomNavView.visibility = View.VISIBLE

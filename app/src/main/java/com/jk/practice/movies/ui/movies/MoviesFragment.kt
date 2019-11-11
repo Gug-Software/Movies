@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 
 import com.jk.practice.movies.R
@@ -82,6 +83,9 @@ class MoviesFragment
 
     override fun navigateToMovieDetail(movieId: Int) {
 
+//        val extras = FragmentNavigatorExtras(
+//            imageView to "header_image",
+//            titleView to "header_title")
         this.findNavController().navigate(
             MoviesFragmentDirections.actionMoviesToMovieDetail(movieId)
         )

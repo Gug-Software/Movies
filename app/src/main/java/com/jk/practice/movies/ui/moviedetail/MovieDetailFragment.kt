@@ -5,8 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.widget.NestedScrollView
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
+import androidx.navigation.findNavController
 
 import com.jk.practice.movies.R
 import com.jk.practice.movies.databinding.FragmentMovieDetailBinding
@@ -14,6 +16,7 @@ import com.jk.practice.movies.ui.moviedetail.adapters.GenresAdapter
 import com.jk.practice.movies.ui.moviedetail.adapters.ProductionCompanyAdapter
 import com.jk.practice.movies.ui.moviedetail.adapters.SpokenLanguageAdapter
 import com.jk.practice.movies.viewmodels.moviedetail.MovieDetailViewModel
+import kotlinx.android.synthetic.main.fragment_movie_detail.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class MovieDetailFragment : Fragment() {
@@ -38,10 +41,19 @@ class MovieDetailFragment : Fragment() {
         binding.lifecycleOwner = this
 
         configureRecyclers()
+        configureFragmentViews()
         //defineSkeletonScreens()
         defineObservers()
 
         return binding.root
+    }
+
+    private fun configureFragmentViews() {
+
+        binding.movieDetailToolbar.setNavigationOnClickListener { view ->
+            view.findNavController().navigateUp()
+        }
+
     }
 
     private fun defineObservers() {
