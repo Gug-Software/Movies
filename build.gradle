@@ -25,6 +25,11 @@ buildscript {
         test_junit = "4.12"
         test_x_junit = "1.1.0"
         test_espresso_core = "3.1.1"
+        mockito_kotlin = "3.0.0"
+        archTestingVersion = '2.0.0'
+        coroutinesVersion = '1.2.1'
+        mockk_version = '1.9'
+        truthVersion = '0.44'
 
     }
 

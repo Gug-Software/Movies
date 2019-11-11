@@ -2,6 +2,7 @@ package com.jk.practice.movies.viewmodels.movies
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.jk.practice.movies.R
 import com.jk.practice.movies.domain.contracts.movies.IContractMovies
 import com.jk.practice.movies.domain.domain.movies.Movie
 import com.jk.practice.movies.utils.Result
@@ -36,13 +37,18 @@ class MoviesViewModel(
                 if (moviesFromRepository is Result.Success) {
                     _movies.value = moviesFromRepository.data
                     _status.value = WorkStatus.DONE
+                    if (_movies.value.isNullOrEmpty()) {
+                        _snackbarText.value = R.string.msg_empty
+                    }
                 } else {
                     _status.value = WorkStatus.ERROR
                     _movies.value = emptyList()
+                    _snackbarText.value = R.string.msg_error
                 }
             } catch (e: Exception) {
                 _status.value = WorkStatus.ERROR
                 _movies.value = emptyList()
+                _snackbarText.value = R.string.msg_error
             }
         }
 

@@ -49,11 +49,6 @@ class MovieDetailRepository(
         return withContext(ioDispatcher) {
 
             try {
-//                var movie =
-//                    getDomainMovieFromLocal(movieId)
-//
-//                return@withContext Result.Success(movie)
-
                 val movieRemote = remoteDataStore.getMovieDetail(movieId)
                 movieRemote?.let { movieDetail ->
                     localDataStore.updateMovie(movieDetailDbMapper.mapFromTo(movieDetail))

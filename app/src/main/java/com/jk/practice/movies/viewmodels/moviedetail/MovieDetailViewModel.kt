@@ -35,10 +35,11 @@ class MovieDetailViewModel(
                     _status.value = WorkStatus.DONE
                 } else {
                     _status.value = WorkStatus.ERROR
-                    _snackbarText.value = R.string.app_name
+                    _snackbarText.value = R.string.msg_error
                 }
             } catch (e: Exception) {
                 _status.value = WorkStatus.ERROR
+                _snackbarText.value = R.string.msg_error
             }
         }
 
