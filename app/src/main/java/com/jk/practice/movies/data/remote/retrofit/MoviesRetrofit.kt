@@ -6,6 +6,7 @@ import com.jk.practice.movies.data.remote.retrofit.MoviesAPI
 import com.jk.practice.movies.data.remote.retrofit.MoviesAPIConstants.Companion.URL
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+import okhttp3.Cache
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
@@ -18,6 +19,7 @@ import java.util.concurrent.TimeUnit
 private val moshi = Moshi.Builder()
     .add(KotlinJsonAdapterFactory())
     .build()
+
 
 private val okHttpClient = OkHttpClient().newBuilder()
     .connectTimeout(20, TimeUnit.SECONDS)

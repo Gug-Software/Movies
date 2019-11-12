@@ -56,9 +56,9 @@
 
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="36dp"
+                    android:layout_height="@dimen/gradientMovieDetail_height"
                     android:layout_gravity="bottom"
-                    android:background="@drawable/shape_gradientv_whitetransparent"></View>
+                    android:background="@drawable/shape_gradientv_whitetransparent" />
 
                 <androidx.appcompat.widget.Toolbar
                     android:id="@+id/movieDetailToolbar"

@@ -19,5 +19,6 @@
 
     <dimen name="movie_item_height">210dp</dimen>
     <dimen name="movie_detail_app_bar_height">240dp</dimen>
+    <dimen name="gradientMovieDetail_height">60dp</dimen>
 
 </resources>

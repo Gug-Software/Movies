@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.FragmentNavigator
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 
@@ -24,6 +25,7 @@ class MoviesFragment
 
     lateinit var binding: FragmentMoviesBinding
     private val viewModel by viewModel<MoviesViewModel>()
+    private lateinit var extrasForNavigation: FragmentNavigator.Extras
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -47,8 +49,10 @@ class MoviesFragment
 
         val adapter = MoviesAdapter(
             MovieItemListener(
-                clickListener = { movie ->
+                clickListener = { movie, imageView ->
+                    extrasForNavigation = FragmentNavigatorExtras(imageView to "imageView")
                     viewModel.showMovieDetail(movie)
+
                 }
             )
         )
@@ -75,7 +79,8 @@ class MoviesFragment
     override fun navigateToMovieDetail(movieId: Int) {
 
         this.findNavController().navigate(
-            MoviesFragmentDirections.actionMoviesToMovieDetail(movieId)
+            MoviesFragmentDirections.actionMoviesToMovieDetail(movieId),
+            extrasForNavigation
         )
     }
 

@@ -18,8 +18,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/movie_constraintPpal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="@{() -> listener.onClick(movie)}">
+        android:layout_height="wrap_content">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/movie_card"
@@ -42,6 +41,7 @@
                     imageUrl="@{movie.definitiveBackdropPath}"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/movie_item_height"
+                    android:onClick="@{(theView) -> listener.onClick(movie, theView)}"
                     android:scaleType="fitXY"
                     android:transitionName="imageMovie"
                     app:layout_constraintEnd_toEndOf="parent"
