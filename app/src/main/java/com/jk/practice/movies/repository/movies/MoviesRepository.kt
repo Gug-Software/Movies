@@ -44,6 +44,7 @@ class MoviesRepository(
                     val movies = movieLocal.data.map { movieFromLocal.mapFromTo(it) }
                     return@withContext Result.Success(movies)
                 }
+                return@withContext Result.Error(Exception("Illegal state"))
             }
         }
 

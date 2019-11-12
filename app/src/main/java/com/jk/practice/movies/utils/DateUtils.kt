@@ -12,7 +12,6 @@ class DateUtils {
     companion object {
 
         val PATTERN_DATE_FROMAPI = "yyyy-MM-dd"
-        val PATTERN_DATE_FORHUMAN = "dd de MM de yyyy"
 
         fun getMillisFromDate(
             dateString: String,

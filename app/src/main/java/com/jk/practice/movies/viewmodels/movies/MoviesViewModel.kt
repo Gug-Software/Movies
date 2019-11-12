@@ -38,6 +38,7 @@ class MoviesViewModel(
                     _movies.value = moviesFromRepository.data
                     _status.value = WorkStatus.DONE
                     if (_movies.value.isNullOrEmpty()) {
+                        _status.value = WorkStatus.ERROR
                         _snackbarText.value = R.string.msg_empty
                     }
                 } else {

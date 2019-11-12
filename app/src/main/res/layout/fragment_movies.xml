@@ -25,12 +25,39 @@
                 android:id="@+id/movies_recycler"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                app:hideFromApiStatus="@{viewmodel.status}"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:listitem="@layout/recycler_item_movie" />
+                tools:listitem="@layout/recycler_item_movie"
+                tools:visibility="gone" />
+
+            <ProgressBar
+                android:id="@+id/movies_progress"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:showFromApiStatus="@{viewmodel.status}" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/margin_M"
+                android:gravity="center"
+                android:text="@string/msg_empty"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                app:hideFromApiStatusError="@{viewmodel.status}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

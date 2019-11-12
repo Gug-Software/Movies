@@ -1,6 +1,5 @@
 package com.jk.practice.movies.ui.movies
 
-
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -20,9 +19,6 @@ import com.jk.practice.movies.ui.movies.adapter.MoviesAdapter
 import com.jk.practice.movies.viewmodels.movies.MoviesViewModel
 import org.koin.android.viewmodel.ext.android.viewModel
 
-/**
- * A simple [Fragment] subclass.
- */
 class MoviesFragment
     : Fragment(), IContractMovies.View {
 
@@ -33,13 +29,9 @@ class MoviesFragment
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(
-            inflater, R.layout.fragment_movies, container, false
-        )
-
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_movies, container, false)
         binding.viewmodel = viewModel
         binding.lifecycleOwner = this
-
         configureRecyclerMovies()
         defineObservers()
 
@@ -49,7 +41,6 @@ class MoviesFragment
     override fun onStart() {
         super.onStart()
         viewModel.loadMovies()
-        //navigateToMovieDetail(420818)
     }
 
     private fun configureRecyclerMovies() {
@@ -83,9 +74,6 @@ class MoviesFragment
 
     override fun navigateToMovieDetail(movieId: Int) {
 
-//        val extras = FragmentNavigatorExtras(
-//            imageView to "header_image",
-//            titleView to "header_title")
         this.findNavController().navigate(
             MoviesFragmentDirections.actionMoviesToMovieDetail(movieId)
         )

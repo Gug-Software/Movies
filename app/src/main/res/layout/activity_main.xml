@@ -28,6 +28,7 @@
             android:id="@+id/bottom_nav_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/background_white"
             android:elevation="@dimen/elevation_S"
             app:itemIconTint="@drawable/bottom_navigation_view_selector"
             app:itemTextColor="@drawable/bottom_navigation_view_selector"

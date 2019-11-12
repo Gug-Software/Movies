@@ -25,20 +25,20 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/movie_detail_app_bar_height"
             android:animateLayoutChanges="true"
-            android:background="?attr/colorSurface"
+            android:background="?attr/colorPrimary"
             android:fitsSystemWindows="true"
             android:stateListAnimator="@animator/show_toolbar">
 
             <com.google.android.material.appbar.CollapsingToolbarLayout
-                android:id="@+id/toolbar_layout"
+                android:id="@+id/movieDetail_collapsingToolbar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:fitsSystemWindows="true"
                 app:collapsedTitleGravity="center"
                 app:collapsedTitleTextAppearance="@style/MoviesDetailToolbarText"
-                app:contentScrim="?attr/colorSurface"
+                app:contentScrim="?attr/colorPrimary"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed"
-                app:statusBarScrim="?attr/colorSurface"
+                app:statusBarScrim="?attr/colorPrimary"
                 app:title="@{viewModel.movie.originalTitle}"
                 app:toolbarId="@id/movieDetailToolbar">
 
@@ -53,6 +53,12 @@
                     android:transitionName="imageMovie"
                     app:layout_collapseMode="parallax"
                     tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/shape_gradientv_whitetransparent"></View>
 
                 <androidx.appcompat.widget.Toolbar
                     android:id="@+id/movieDetailToolbar"

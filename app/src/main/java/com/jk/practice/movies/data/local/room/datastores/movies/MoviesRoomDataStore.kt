@@ -27,7 +27,7 @@ class MoviesRoomDataStore(
         try {
             moviesDao.insertAll(*movies)
         } catch (e: Exception) {
-            e.printStackTrace()
+            throw Exception("Ilegal state")
         }
     }
 

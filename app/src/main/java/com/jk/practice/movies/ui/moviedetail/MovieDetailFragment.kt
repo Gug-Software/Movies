@@ -1,10 +1,12 @@
 package com.jk.practice.movies.ui.moviedetail
 
+import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.widget.NestedScrollView
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
@@ -22,7 +24,7 @@ import org.koin.android.viewmodel.ext.android.viewModel
 class MovieDetailFragment : Fragment() {
 
     lateinit var binding: FragmentMovieDetailBinding
-    private val viewModel by viewModel<MovieDetailViewModel>()
+    private val movieDetailViewModel by viewModel<MovieDetailViewModel>()
 
     lateinit var adapterGenres: GenresAdapter
     lateinit var adapterLanguages: SpokenLanguageAdapter
@@ -33,19 +35,27 @@ class MovieDetailFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        binding = DataBindingUtil.inflate(
+        binding = DataBindingUtil.inflate<FragmentMovieDetailBinding>(
             inflater, R.layout.fragment_movie_detail, container, false
-        )
+        ).apply {
 
-        binding.viewModel = viewModel
-        binding.lifecycleOwner = this
+            viewModel = movieDetailViewModel
+            lifecycleOwner = viewLifecycleOwner
+
+        }
 
         configureRecyclers()
-        configureFragmentViews()
-        //defineSkeletonScreens()
         defineObservers()
 
         return binding.root
+    }
+
+
+    override fun onStart() {
+        super.onStart()
+        val args = MovieDetailFragmentArgs.fromBundle(arguments!!)
+        movieDetailViewModel.loadMovieDetail(args.movieId)
+        configureFragmentViews()
     }
 
     private fun configureFragmentViews() {
@@ -54,11 +64,12 @@ class MovieDetailFragment : Fragment() {
             view.findNavController().navigateUp()
         }
 
+
     }
 
     private fun defineObservers() {
 
-        viewModel.movie.observe(this, Observer {
+        movieDetailViewModel.movie.observe(this, Observer {
             adapterGenres.submitList(it.genres)
             adapterLanguages.submitList(it.languages)
             adapterCompanies.submitList(it.companies)
@@ -79,10 +90,5 @@ class MovieDetailFragment : Fragment() {
 
     }
 
-    override fun onStart() {
-        super.onStart()
-        val args = MovieDetailFragmentArgs.fromBundle(arguments!!)
-        viewModel.loadMovieDetail(args.movieId)
-    }
 
 }

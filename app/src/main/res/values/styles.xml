@@ -19,7 +19,7 @@
     </style>
 
     <style name="MoviesDetailToolbarText" parent="TextAppearance.MaterialComponents.Headline5">
-        <item name="android:textColor">@color/secondaryTextColor</item>
+        <item name="android:textColor">@color/primaryTextColor</item>
     </style>
 
 </resources>

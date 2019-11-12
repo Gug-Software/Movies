@@ -101,6 +101,9 @@ dependencies {
     // Koin Android Experimental features
     implementation "org.koin:koin-android-ext:$version_koin"
 
+    // Lottie
+    implementation "com.airbnb.android:lottie:${version_lottie}"
+
     // tests
     testImplementation "junit:junit:$test_junit"
     testImplementation "org.mockito:mockito-core:$mockito_kotlin"
