@@ -11,6 +11,7 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.FragmentNavigator
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.snackbar.Snackbar
 
 import com.jk.practice.movies.R
 import com.jk.practice.movies.databinding.FragmentMoviesBinding
@@ -71,6 +72,13 @@ class MoviesFragment
             movie?.let {
                 navigateToMovieDetail(movie.id)
                 viewModel.onNavigateMovieDetailDone()
+            }
+        })
+
+        viewModel.snackbarMessage.observe(this, Observer {
+            if (it != 0) {
+                Snackbar.make(binding.moviesFragmentCoordinator, getString(it), Snackbar.LENGTH_LONG).show()
+                viewModel.onSnackBarDone()
             }
         })
 

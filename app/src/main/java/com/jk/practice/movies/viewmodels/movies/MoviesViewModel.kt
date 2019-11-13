@@ -62,4 +62,8 @@ class MoviesViewModel(
     fun onNavigateMovieDetailDone() {
         _navToDetailMovie.value = null
     }
+
+    fun onSnackBarDone() {
+        _snackbarText.value = 0
+    }
 }

@@ -45,4 +45,8 @@ class MovieDetailViewModel(
 
     }
 
+    fun onSnackBarDone() {
+        _snackbarText.value = 0
+    }
+
 }

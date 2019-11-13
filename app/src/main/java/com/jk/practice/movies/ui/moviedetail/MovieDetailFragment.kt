@@ -20,6 +20,7 @@ import com.jk.practice.movies.viewmodels.moviedetail.MovieDetailViewModel
 import kotlinx.android.synthetic.main.fragment_movie_detail.*
 import org.koin.android.viewmodel.ext.android.viewModel
 import android.view.animation.AnimationUtils
+import com.google.android.material.snackbar.Snackbar
 import com.jk.practice.movies.R
 import com.jk.practice.movies.utils.views.goneViews
 import com.jk.practice.movies.utils.views.visibleViews
@@ -152,6 +153,12 @@ class MovieDetailFragment : Fragment() {
                 }
 
             }
+        })
+
+        movieDetailViewModel.snackbarMessage.observe(this, Observer {
+            Snackbar.make(binding.movieDetailCoordinator, getString(it), Snackbar.LENGTH_LONG)
+                .show()
+            movieDetailViewModel.onSnackBarDone()
         })
 
     }

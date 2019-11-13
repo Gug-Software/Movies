@@ -4,7 +4,7 @@ class MoviesAPIConstants {
 
     companion object {
 
-        val URL = "https://api.themoviedb.org/3/"
+        val URL = "https://api.themoviedb.org/33/"
         val API_KEY = "f6f22d6270ecc338f31fb3771cc6b13e"
 
         val LANGUAGE_ES = "es-CO"
