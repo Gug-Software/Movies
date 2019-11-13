@@ -37,26 +37,8 @@ class MainActivity : AppCompatActivity() {
 
         binding.bottomNavView.setupWithNavController(navController)
 
-        setOnDestinationChangedListener()
-
-    }
-
-    private fun setOnDestinationChangedListener() {
-
-        host.navController.addOnDestinationChangedListener { _, destination, _ ->
-
-            when (destination.id) {
-                R.id.movieDetail -> {
-                    binding.bottomNavView.visibility = View.GONE
-                    binding.toolbar.visibility = View.GONE
-                }
-                else -> {
-                    binding.bottomNavView.visibility = View.VISIBLE
-                    binding.toolbar.visibility = View.GONE
-                }
-            }
-
-        }
+        binding.bottomNavView.visibility = View.GONE
+        binding.toolbar.visibility = View.GONE
 
     }
 
