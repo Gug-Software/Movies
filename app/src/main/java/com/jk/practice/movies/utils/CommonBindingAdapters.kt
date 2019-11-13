@@ -14,10 +14,10 @@ fun setImageUrl(imageView: ImageView, url: String?) {
 }
 
 @BindingAdapter("showFromApiStatus")
-fun showFromApiStatus(progressBar: ProgressBar, status: WorkStatus?) {
+fun showFromApiStatus(view: View, status: WorkStatus?) {
     when (status) {
-        WorkStatus.LOADING -> progressBar.visibility = View.VISIBLE
-        else -> progressBar.visibility = View.GONE
+        WorkStatus.LOADING -> view.visibility = View.VISIBLE
+        else -> view.visibility = View.GONE
     }
 }
 

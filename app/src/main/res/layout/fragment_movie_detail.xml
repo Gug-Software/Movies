@@ -82,7 +82,9 @@
             android:paddingBottom="@dimen/padding_M"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-            <androidx.constraintlayout.widget.ConstraintLayout style="@style/mm">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/movieDetail_constraintInformation"
+                style="@style/mm">
 
                 <TextView
                     android:id="@+id/movieDetail_textViewDescription"
@@ -91,6 +93,7 @@
                     android:layout_marginTop="@dimen/margin_M"
                     android:text="@string/movieDetail_description"
                     android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    app:hideFromApiStatus="@{viewModel.status}"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -103,6 +106,7 @@
                     android:lineSpacingMultiplier="1.2"
                     android:text="@{viewModel.movie.overview}"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    app:hideFromApiStatus="@{viewModel.status}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/movieDetail_textViewDescription"
@@ -112,6 +116,7 @@
                     android:id="@+id/movieDetail_constraintLanguageAndBudge"
                     style="@style/mw"
                     android:layout_marginTop="@dimen/margin_S"
+                    app:hideFromApiStatus="@{viewModel.status}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/movieDetail_textViewDescriptionValue">
@@ -211,6 +216,7 @@
                     android:id="@+id/movieDetail_constraintGenres"
                     style="@style/mw"
                     android:layout_marginTop="@dimen/margin_M"
+                    app:hideFromApiStatus="@{viewModel.status}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/movieDetail_constraintLanguageAndBudge">
@@ -243,6 +249,7 @@
                     android:id="@+id/movieDetail_constraintLanguages"
                     style="@style/mw"
                     android:layout_marginTop="@dimen/margin_M"
+                    app:hideFromApiStatus="@{viewModel.status}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/movieDetail_constraintGenres">
@@ -275,6 +282,7 @@
                     android:id="@+id/movieDetail_constraintCompanies"
                     style="@style/mw"
                     android:layout_marginTop="@dimen/margin_M"
+                    app:hideFromApiStatus="@{viewModel.status}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/movieDetail_constraintLanguages">
@@ -302,6 +310,19 @@
                         tools:listitem="@layout/recycler_item_productioncompany" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <ProgressBar
+                    android:id="@+id/movieDetail_progress"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:indeterminate="true"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:showFromApiStatus="@{viewModel.status}" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
